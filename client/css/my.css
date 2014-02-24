@@ -1,0 +1,22 @@
+.board h1 {
+    text-align: center;
+}
+
+.columns-area {
+    display: flex;
+    padding-right: 60px;
+    list-style-type: none;
+}
+
+.column {
+    padding-right: 60px;
+}
+
+.tasks-area {
+    display: block;
+}
+
+.tasks-area {
+    list-style-type: none;
+}
+
