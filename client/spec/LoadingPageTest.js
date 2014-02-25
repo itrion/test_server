@@ -11,13 +11,18 @@ describe("Loading page", function () {
             expect(boardArea).toBeVisible();
         });
 
-        it("shows login form", function(){
+        it("shows login form", function () {
             var loginForm = $(".login-form");
-            expect(loginForm).toBeDefined();
             expect(loginForm).toBeVisible();
+            expect(loginForm.find(".username")).toBeInDOM();
+            expect(loginForm.find(".password")).toBeInDOM();
         });
-    });
 
-    describe("after login", function(){
+        it("user do login", function () {
+            var loginForm = $(".login-form");
+            var spyEvent = spyOnEvent(loginForm, "submit");
+            loginForm.find("#button").trigger("click");
+            expect(spyEvent).toHaveBeenTriggered();
+        });
     });
 });
